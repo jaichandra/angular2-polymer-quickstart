@@ -1,0 +1,19 @@
+<div *ngIf="hero">
+    <h2>{{hero.name}} details!</h2>
+    <div>
+        <label>id: </label>{{hero.id}}</div>
+    <div>
+        <paper-input label="Name" [(value)]="hero.name"></paper-input>
+
+        <paper-checkbox [(checked)]="checkboxValue">Checkbox</paper-checkbox>
+        &nbsp;&nbsp;<span><b>Selected: {{checkboxValue}}</b></span>
+        <p>&nbsp;</p>
+
+        <b>Selected skill: {{selectedSkillLevel}}</b>
+        <vaadin-combo-box label="Skill Level" [items]="skillLevels" [(value)]="selectedSkillLevel"></vaadin-combo-box>
+    </div>
+    <br/>
+    <paper-button (click)="goBack()">Back</paper-button>
+    <paper-button flat (click)="save()">Save</paper-button>
+
+</div>

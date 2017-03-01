@@ -1,0 +1,10 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
+    <paper-card heading="{{hero.name}}" image="http://placehold.it/350x150/FFC107/000000">
+      <div class="card-content">
+        <h4>{{hero.name}}</h4>
+      </div>
+    </paper-card>
+  </div>
+</div>

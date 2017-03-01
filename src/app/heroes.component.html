@@ -1,0 +1,23 @@
+<h2>My Heroes</h2>
+
+<paper-listbox>
+    <paper-item *ngFor="let hero of heroes" (click)="onSelect(hero)">
+        <div class="badge" item-icon>{{hero.id}}</div>
+        <paper-item-body>
+            <div>{{hero.name}}</div>
+        </paper-item-body>
+        <paper-icon-button icon="delete" alt="delete this!" (click)="deleteHero(hero, $event)">
+        </paper-icon-button>
+    </paper-item>
+</paper-listbox>
+
+
+<div class="error" *ngIf="error">{{error}}</div>
+<paper-button raised (click)="addHero()">Add New Hero</paper-button>
+<div *ngIf="addingHero">
+    <my-hero-detail (close)="close($event)"></my-hero-detail>
+</div>
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} is my hero</h2>
+    <paper-button raised (click)="gotoDetail()">View Details</paper-button>
+</div>
